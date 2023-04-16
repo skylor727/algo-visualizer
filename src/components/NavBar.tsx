@@ -1,8 +1,17 @@
+import Link from "next/link";
+import { useRouter } from "next/router";
 export const NavBar = () => {
+  const Router = useRouter();
+  const handlePathChange = (path: string) => {
+    Router.push(path);
+  };
+
   return (
     <>
       <header>
-        <span>Linear Search</span>
+        <Link href="/LinearSearch" onClick={() => handlePathChange("LinearSearch")}>
+          <span>Linear Search</span>
+        </Link>
         <span> | </span>
         <span>algo2</span>
         <span> | </span>
